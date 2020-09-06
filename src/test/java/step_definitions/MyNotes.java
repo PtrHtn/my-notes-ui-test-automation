@@ -18,10 +18,15 @@ public class MyNotes extends User {
         user().canSeeButtonWithSign(buttonSign);
     }
 
-    @When("user creates a new note with the title {string}")
-    public void userCreatesANewNoteWithTheTitle(String noteTitle) {
-        user().clickAddANoteButton().and().enterNoteTitle(noteTitle);
+//    @When("user creates a new note with the title {string}")
+//    public void userCreatesANewNoteWithTheTitle(String noteTitle) {
+//        user().clickAddANoteButton().and().enterNoteTitle(noteTitle);
+//
+//    }
 
+    @When("user creates a new note by clicking on the button {string} with the title {string}")
+    public void userCreatesANewNoteByClickingOnTheButtonWithTheTitle(String buttonSign, String noteTitle) {
+        user().addNewNoteByClickingOnTheButton(buttonSign).and().enterNoteTitle(noteTitle);
     }
 
     @And("with the content {string}")
