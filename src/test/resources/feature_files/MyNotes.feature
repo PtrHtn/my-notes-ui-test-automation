@@ -7,15 +7,14 @@ Feature: My Notes
     Then button "Add a note" is displayed on the page
 
   @SmokeTest
-  Scenario: User can create a new note by clicking on the button "Add a note"
-    When user creates a new note by clicking on the button "Add a note" with the title "My first note"
-    And with the content "This is my first note."
-    Then the note with title "My first note"
-    And content "This is my first note." is displayed on the page
+  Scenario Outline: User can create a new note
+    When user creates a new note by clicking on the button <buttonSign> with the title <noteTitle>
+    And with the content <noteContent>
+    Then the note with title <noteTitle>
+    And content <noteContent> is displayed on the page
 
-  @SmokeTest
-  Scenario: User can create a new note by clicking on the button "+"
-    When user creates a new note by clicking on the button "+" with the title "My second note"
-    And with the content "This is my second note."
-    Then the note with title "My second note"
-    And content "This is my second note." is displayed on the page
+    Examples:
+      | buttonSign   | noteTitle        | noteContent               |
+      | "Add a note" | "My first note"  | "This is my first note."  |
+      | "+"          | "My second note" | "This is my second note." |
+
