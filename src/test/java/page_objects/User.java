@@ -16,6 +16,7 @@ public class User {
     private final WebDriverWait driverWait = CucumberHooks.driverWait;
 
     private final By buttonAddNoteLocator = By.linkText("Add a note");
+    private final By buttonPlusSignLocator = By.cssSelector("a[title='Add Note']");
     private final By noteTitleFieldLocator = By.id("title");
     private final By noteContentFieldLocator = By.id("content");
     private final By buttonSaveLocator = By.cssSelector("button[type='submit']");
@@ -35,13 +36,6 @@ public class User {
     public void canSeeButtonWithSign(String string) {
         Assertions.assertEquals(driver.findElement(buttonAddNoteLocator).getText(), string,
                 "\n\nUser can NOT see button with the sign \"" + string + "\" on the page!\n\n");
-    }
-
-
-    public User clickAddANoteButton() {
-        driverWait.until(ExpectedConditions.elementToBeClickable(buttonAddNoteLocator));
-        driver.findElement(buttonAddNoteLocator).click();
-        return this;
     }
 
     public void enterNoteTitle(String noteTitle) {
@@ -70,5 +64,25 @@ public class User {
         driverWait.until(ExpectedConditions.visibilityOfElementLocated(noteContentLocator(noteContent)));
         Assertions.assertEquals(noteContent, driver.findElement(noteContentLocator(noteContent)).getText(),
                 "\n\nCan NOT see Note the content '" + noteContent + "' on the page!\n\n ");
+    }
+
+    public User clickAddANoteButton() {
+        driverWait.until(ExpectedConditions.elementToBeClickable(buttonAddNoteLocator));
+        driver.findElement(buttonAddNoteLocator).click();
+        return this;
+    }
+
+    public User clickPlusSignButton() {
+        driverWait.until(ExpectedConditions.elementToBeClickable(buttonPlusSignLocator));
+        driver.findElement(buttonPlusSignLocator).click();
+        return this;
+    }
+
+    public User addNewNoteByClickingOnTheButton(String buttonSign) {
+        switch (buttonSign){
+            case "Add a note" -> clickAddANoteButton();
+            case "+" -> clickPlusSignButton();
+        }
+        return this;
     }
 }
