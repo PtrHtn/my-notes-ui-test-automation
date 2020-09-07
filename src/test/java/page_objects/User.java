@@ -1,14 +1,12 @@
 package page_objects;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import step_definitions.CucumberHooks;
-
-import java.util.List;
 
 public class User {
 
@@ -20,6 +18,8 @@ public class User {
     private final By noteTitleFieldLocator = By.id("title");
     private final By noteContentFieldLocator = By.id("content");
     private final By buttonSaveLocator = By.cssSelector("button[type='submit']");
+    private final By buttonDeleteLocator = By.cssSelector("button[data-testid='delete-button']");
+    private final By noteCardLocator = By.cssSelector("li[class='note-card']");
     private By noteTitleLocator(String noteTitle){return By.xpath("//h2[text()='"+noteTitle+"']");}
     private By noteContentLocator(String noteContent){return By.xpath("//p[text()='"+noteContent+"']");}
 
@@ -84,5 +84,55 @@ public class User {
             case "+" -> clickPlusSignButton();
         }
         return this;
+    }
+
+    private int randomNumberInRangeBetween(int min, int max){
+        return (int)(Math.random()*((max-min)+1))+min;
+    }
+
+    private String randomString(int numberOfCharacters) {
+        return RandomStringUtils.randomAlphanumeric(numberOfCharacters);
+    }
+
+    private String randomNoteTitle() {
+        int numberOfCharacters = 0;
+        int numberOfWords = randomNumberInRangeBetween(1, 6);
+        String randomNoteTitle = "";
+        for (int word = 0; word < numberOfWords; word++){
+            numberOfCharacters = randomNumberInRangeBetween(1, 9);
+            randomNoteTitle += randomString(numberOfCharacters) + " ";
+        }
+        System.out.println("\n\nRandom note title: " + randomNoteTitle);
+        return randomNoteTitle;
+    }
+
+    private String randomNoteContent() {
+        int numberOfCharacters = 0;
+        int numberOfWords = randomNumberInRangeBetween(1, 66);
+        String randomNoteContent = "";
+        for (int word = 0; word < numberOfWords; word++){
+            numberOfCharacters = randomNumberInRangeBetween(1, 15);
+            randomNoteContent += randomString(numberOfCharacters) + " ";
+        }
+        System.out.println("Random note content: " + randomNoteContent + "\n\n");
+        return randomNoteContent;
+    }
+
+    public void addRandomNote() {
+        clickPlusSignButton();
+        enterNoteTitle(randomNoteTitle());
+        enterNoteContent(randomNoteContent());
+        clickSaveButton();
+        driverWait.until(ExpectedConditions.numberOfElementsToBe(noteCardLocator, 1));
+    }
+
+    public void deleteNote() {
+        driverWait.until(ExpectedConditions.visibilityOfElementLocated(buttonDeleteLocator));
+        driver.findElement(buttonDeleteLocator).click();
+    }
+
+    public void canNotSeeAnyNote() {
+        driverWait.until(ExpectedConditions.invisibilityOfAllElements(driver.findElements(noteCardLocator)));
+        driverWait.until(ExpectedConditions.visibilityOfElementLocated(buttonAddNoteLocator));
     }
 }
