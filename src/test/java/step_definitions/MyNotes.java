@@ -38,4 +38,18 @@ public class MyNotes extends User {
         user().canSeeNoteContent(noteContent);
     }
 
+    @Given("user creates a note")
+    public void userCreatesANote() {
+        user().addRandomNote();
+    }
+
+    @When("user delete note by clicking on the delete button")
+    public void userDeleteNoteByClickingOnTheDeleteButton() {
+        user().deleteNote();
+    }
+
+    @Then("note is no longer displayed on the page")
+    public void noteIsNoLongerDisplayedOnThePage() {
+        user().canNotSeeAnyNote();
+    }
 }
