@@ -18,3 +18,8 @@ Feature: My Notes
       | "Add a note" | "My first note"  | "This is my first note."  |
       | "+"          | "My second note" | "This is my second note." |
 
+  @SmokeTest
+  Scenario: User can delete note
+    Given user creates a note
+    When user delete note by clicking on the delete button
+    Then note is no longer displayed on the page
