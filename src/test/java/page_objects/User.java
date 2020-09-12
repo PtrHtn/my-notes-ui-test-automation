@@ -135,4 +135,26 @@ public class User {
         driverWait.until(ExpectedConditions.invisibilityOfAllElements(driver.findElements(noteCardLocator)));
         driverWait.until(ExpectedConditions.visibilityOfElementLocated(buttonAddNoteLocator));
     }
+
+    public void addNumberOfRandomNotes(int numberOfNotes) {
+        clickPlusSignButton();
+        for (int i = 0; i < numberOfNotes; i++) {
+            clickPlusSignButton();
+            enterNoteTitle(randomNoteTitle());
+            enterNoteContent(randomNoteContent());
+            clickSaveButton();
+        }
+    }
+
+    public void canSeeNumberOfRandomNotes(int numberOfNotes) {
+        driverWait.until(ExpectedConditions.visibilityOfElementLocated(noteCardLocator));
+        Assertions.assertEquals(numberOfNotes, driver.findElements(noteCardLocator).size(),
+                "\n\nNumber of displayed notes is not as expected!\n\n");
+    }
+
+    public void deleteAllNotes() {
+        for (int i = 0; i<driver.findElements(buttonDeleteLocator).size(); i++) {
+            deleteNote();
+        }
+    }
 }
