@@ -52,4 +52,19 @@ public class MyNotes extends User {
     public void noteIsNoLongerDisplayedOnThePage() {
         user().canNotSeeAnyNote();
     }
+
+    @When("user create {int} notes")
+    public void userCreateNotes(int numberOfNotes) {
+        user().addNumberOfRandomNotes(numberOfNotes);
+    }
+
+    @Then("{int} notes is displayed")
+    public void notesIsDisplayed(int numberOfNotes) {
+        user().canSeeNumberOfRandomNotes(numberOfNotes);
+    }
+
+    @And("user can delete them all")
+    public void userCanDeleteThemAll() {
+        user().deleteAllNotes();
+    }
 }
