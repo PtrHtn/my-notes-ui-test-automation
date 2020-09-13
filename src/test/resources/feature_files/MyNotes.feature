@@ -35,3 +35,9 @@ Feature: My Notes
       | 10            |
       | 20            |
       | 30            |
+
+  @SmokeTest
+  Scenario: After user re-visit the page previously added notes are still visible
+    When user create 7 notes
+    And re-visit the page
+    Then 7 previously added notes are still visible
