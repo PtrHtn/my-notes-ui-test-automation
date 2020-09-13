@@ -67,4 +67,14 @@ public class MyNotes extends User {
     public void userCanDeleteThemAll() {
         user().deleteAllNotes();
     }
+
+    @And("re-visit the page")
+    public void reVisitThePage() {
+        user().refreshBrowser();
+    }
+
+    @Then("{int} previously added notes are still visible")
+    public void previouslyAddedNotesAreStillVisible(int numberOfNotes) {
+        user().canSeeNumberOfRandomNotes(numberOfNotes);
+    }
 }
