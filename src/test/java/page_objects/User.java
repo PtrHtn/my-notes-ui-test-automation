@@ -157,4 +157,9 @@ public class User {
             deleteNote();
         }
     }
+
+    public void refreshBrowser() {
+        driver.navigate().refresh();
+        driverWait.until(ExpectedConditions.visibilityOfElementLocated(noteCardLocator));
+    }
 }
