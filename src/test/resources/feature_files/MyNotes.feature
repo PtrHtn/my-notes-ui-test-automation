@@ -41,3 +41,12 @@ Feature: My Notes
     When user create 7 notes
     And re-visit the page
     Then 7 previously added notes are still visible
+
+  @SmokeTest
+  Scenario: User can edit title of the note
+    Given user creates a new note by clicking on the button "Add a note" with the title "My note title"
+    And with the content "This is my note."
+    When user open editing note mode by clicking edit button
+    And change title of the note to "My edited note title"
+    Then the note with title "My edited note title"
+    And content "This is my note." is displayed on the page
