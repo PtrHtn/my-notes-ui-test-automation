@@ -77,4 +77,13 @@ public class MyNotes extends User {
     public void previouslyAddedNotesAreStillVisible(int numberOfNotes) {
         user().canSeeNumberOfRandomNotes(numberOfNotes);
     }
+
+    @When("user open editing note mode by clicking edit button")
+    public void userOpenEditingNoteModeByClickingEditButton() {
+        user().clickEditButton();
+    }
+
+    @And("change title of the note to {string}")
+    public void changeTitleOfTheNoteTo(String arg0) {
+    }
 }
