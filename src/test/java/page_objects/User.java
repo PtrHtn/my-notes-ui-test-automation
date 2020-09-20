@@ -20,6 +20,7 @@ public class User {
     private final By buttonSaveLocator = By.cssSelector("button[type='submit']");
     private final By buttonDeleteLocator = By.cssSelector("button[data-testid='delete-button']");
     private final By noteCardLocator = By.cssSelector("li[class='note-card']");
+    private final By editButtonLocator = By.cssSelector("a[data-cy= 'edit-note']");
     private By noteTitleLocator(String noteTitle){return By.xpath("//h2[text()='"+noteTitle+"']");}
     private By noteContentLocator(String noteContent){return By.xpath("//p[text()='"+noteContent+"']");}
 
@@ -162,4 +163,10 @@ public class User {
         driver.navigate().refresh();
         driverWait.until(ExpectedConditions.visibilityOfElementLocated(noteCardLocator));
     }
+
+    public void clickEditButton() {
+        driverWait.until(ExpectedConditions.visibilityOfElementLocated(editButtonLocator));
+        driver.findElement(editButtonLocator).click();
+    }
+
 }
