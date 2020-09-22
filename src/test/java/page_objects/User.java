@@ -169,4 +169,10 @@ public class User {
         driver.findElement(editButtonLocator).click();
     }
 
+    public void changeNoteTitleTo(String newNoteTitle) {
+        driverWait.until(ExpectedConditions.visibilityOfElementLocated(noteTitleFieldLocator));
+        driver.findElement(noteTitleFieldLocator).clear();
+        driver.findElement(noteTitleFieldLocator).sendKeys(newNoteTitle);
+        clickSaveButton();
+    }
 }
