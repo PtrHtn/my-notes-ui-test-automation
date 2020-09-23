@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
         glue = {"classpath:step_definitions"},
         monochrome = false,
         dryRun = false,
-        tags = ("@SmokeTest")
+        tags = ("@myNotes")
 )
 
 public class MyNotesRunner {
