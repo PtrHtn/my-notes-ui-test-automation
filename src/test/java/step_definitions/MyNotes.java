@@ -84,6 +84,7 @@ public class MyNotes extends User {
     }
 
     @And("change title of the note to {string}")
-    public void changeTitleOfTheNoteTo(String arg0) {
+    public void changeTitleOfTheNoteTo(String newNoteTitle) {
+        user().changeNoteTitleTo(newNoteTitle);
     }
 }
