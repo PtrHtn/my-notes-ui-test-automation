@@ -1,5 +1,5 @@
 # my-notes-ui-test-automation
-#### UI test automation for _My Notes_ project at <https://my-notes.now.sh>
+#### UI test automation for _My Notes_ project at <https://github.com/sohrabtaee/react-crud>
 
 ### Built with
 - [JUnit 5 v5.7.0](https://github.com/junit-team/junit5)
