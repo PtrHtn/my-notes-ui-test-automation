@@ -18,6 +18,9 @@ public class BasePage {
         }
     }
 
-
+    public void click(By locator) {
+        waitForVisibilityOf(locator);
+        driver.findElement(locator).click();
+    }
 
 }
