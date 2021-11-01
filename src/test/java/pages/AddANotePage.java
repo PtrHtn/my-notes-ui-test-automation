@@ -9,5 +9,6 @@ public class AddANotePage extends BasePage{
     private final By buttonSaveLocator = By.cssSelector("button[type='submit']");
 
     public AddANotePage then() { return this; }
+    public AddANotePage and() { return this; }
 
 }
