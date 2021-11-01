@@ -11,4 +11,9 @@ public class AddANotePage extends BasePage{
     public AddANotePage then() { return this; }
     public AddANotePage and() { return this; }
 
+    public AddANotePage enterNoteTitle(String noteTitle) {
+        sendKeysTo(noteTitleFieldLocator, noteTitle);
+        return this;
+    }
+
 }
