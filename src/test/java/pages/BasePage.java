@@ -1,7 +1,10 @@
 package pages;
 
+import org.apache.commons.lang3.RandomStringUtils;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import step_definitions.CucumberHooks;
@@ -18,7 +21,11 @@ public class BasePage {
         }
     }
 
-    public void click(By locator) {
+    protected void goTo(String url){
+        driver.get(url);
+    }
+
+    protected void click(By locator) {
         waitForVisibilityOf(locator);
         driver.findElement(locator).click();
     }
