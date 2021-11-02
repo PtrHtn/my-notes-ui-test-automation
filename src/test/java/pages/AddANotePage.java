@@ -20,5 +20,10 @@ public class AddANotePage extends BasePage{
         sendKeysTo(noteContentFieldLocator, noteContent);
         return this;
     }
+
+    public DisplayNotesPage pressSaveButton() {
+        click(buttonSaveLocator);
+        return new DisplayNotesPage();
+    }
     
 }
