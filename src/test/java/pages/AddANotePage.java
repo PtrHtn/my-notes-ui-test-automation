@@ -25,5 +25,13 @@ public class AddANotePage extends BasePage{
         click(buttonSaveLocator);
         return new DisplayNotesPage();
     }
-    
+
+    public void addNumberOfRandomNotes(int numberOfNotes) {
+        for (int i = 0; i < numberOfNotes; i++) {
+            new HomePage().pressPlusSignButton();
+            enterNoteTitle(randomNoteTitle());
+            enterNoteContent(randomNoteContent());
+            pressSaveButton();
+        }
+    }
 }
