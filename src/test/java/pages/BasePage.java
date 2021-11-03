@@ -35,5 +35,10 @@ public class BasePage {
         driver.findElement(locator).sendKeys(text);
     }
 
+    protected boolean isDisplayed(By locator){
+        waitForVisibilityOf(locator);
+        return driver.findElement(locator).isDisplayed();
+    }
+
 
 }
