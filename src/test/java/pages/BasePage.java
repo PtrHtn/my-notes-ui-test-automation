@@ -44,5 +44,9 @@ public class BasePage {
         return (int)(Math.random()*((max-min)+1))+min;
     }
 
+    private String randomString(int numberOfCharacters) {
+        return RandomStringUtils.randomAlphanumeric(numberOfCharacters);
+    }
+
 
 }
