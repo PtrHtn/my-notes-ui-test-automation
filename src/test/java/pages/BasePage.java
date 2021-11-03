@@ -48,5 +48,17 @@ public class BasePage {
         return RandomStringUtils.randomAlphanumeric(numberOfCharacters);
     }
 
+    protected String randomNoteTitle() {
+        int numberOfCharacters = 0;
+        int numberOfWords = randomNumberInRangeBetween(1, 6);
+        String randomNoteTitle = "";
+        for (int word = 0; word < numberOfWords; word++){
+            numberOfCharacters = randomNumberInRangeBetween(1, 9);
+            randomNoteTitle += randomString(numberOfCharacters) + " ";
+        }
+        System.out.println("\n\nRandom note title: " + randomNoteTitle);
+        return randomNoteTitle;
+    }
+
 
 }
