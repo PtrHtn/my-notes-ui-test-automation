@@ -1,7 +1,8 @@
 package pages;
 
-import org.openqa.selenium.By;
-
 public class HomePage extends BasePage{
-    
+
+    public void navigateTo(String url){
+        goTo(url);
+    }
 }
