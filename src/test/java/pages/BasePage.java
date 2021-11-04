@@ -75,5 +75,10 @@ public class BasePage {
     public void refreshBrowser() {
         driver.navigate().refresh();
     }
+
+    protected int getNumberOfNotes(By noteCardLocator) {
+        driverWait.until(ExpectedConditions.visibilityOfElementLocated(noteCardLocator));
+        return driver.findElements(noteCardLocator).size();
+    }
     
 }
