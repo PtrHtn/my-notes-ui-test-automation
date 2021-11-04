@@ -72,5 +72,8 @@ public class BasePage {
         return randomNoteContent;
     }
 
-
+    public void refreshBrowser() {
+        driver.navigate().refresh();
+    }
+    
 }
