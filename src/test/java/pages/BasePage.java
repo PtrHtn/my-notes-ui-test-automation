@@ -60,5 +60,17 @@ public class BasePage {
         return randomNoteTitle;
     }
 
+    protected String randomNoteContent() {
+        int numberOfCharacters = 0;
+        int numberOfWords = randomNumberInRangeBetween(1, 66);
+        String randomNoteContent = "";
+        for (int word = 0; word < numberOfWords; word++){
+            numberOfCharacters = randomNumberInRangeBetween(1, 15);
+            randomNoteContent += randomString(numberOfCharacters) + " ";
+        }
+        System.out.println("Random note content: " + randomNoteContent + "\n\n");
+        return randomNoteContent;
+    }
+
 
 }
