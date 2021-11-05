@@ -15,3 +15,11 @@ Feature: Creating a new note
       When he chooses to create a new note by clicking on the + sign
       Then newly created note should be displayed on the page
 
+  Rule: After user re-visit the page previously added notes are displayed
+
+    @smoke
+    Scenario: After re-opening the web app previously added notes are displayed
+      Given John is on the homepage of My Notes site
+      When he create 3 notes
+      And re-open the web app
+      Then 3 previously added notes should be displayed
