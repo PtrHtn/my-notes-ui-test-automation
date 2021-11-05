@@ -47,6 +47,12 @@
             <version>6.11.0</version>
             <scope>compile</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-testng -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-testng</artifactId>
+            <version>6.11.0</version>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/me.jvt.cucumber/reporting-plugin -->
         <dependency>
             <groupId>me.jvt.cucumber</groupId>
