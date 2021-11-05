@@ -11,4 +11,9 @@ public class HomePage extends BasePage{
         goTo(url);
     }
 
+    public AddANotePage pressAddANoteButton() {
+        click(buttonAddNoteLocator);
+        return new AddANotePage();
+    }
+    
 }
