@@ -15,5 +15,10 @@ public class HomePage extends BasePage{
         click(buttonAddNoteLocator);
         return new AddANotePage();
     }
-    
+
+    public AddANotePage pressPlusSignButton() {
+        click(buttonPlusSignLocator);
+        return new AddANotePage();
+    }
+
 }
