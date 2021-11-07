@@ -11,4 +11,7 @@ public class DisplayNotesPage extends BasePage{
         return isDisplayed(noteTitleLocator(noteTitle));
     }
 
+    public boolean noteContentIsDisplayed(String noteContent) {
+        return isDisplayed(noteContentLocator(noteContent));
+    }
 }
