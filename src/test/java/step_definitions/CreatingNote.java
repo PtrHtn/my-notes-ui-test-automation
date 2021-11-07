@@ -22,6 +22,12 @@ public class CreatingNote {
         new AddANotePage().enterNoteTitle("New note").and().enterNoteContent("Note content").then().pressSaveButton();
     }
 
+    @When("he chooses to create a new note by clicking on the + sign")
+    public void heChoosesToCreateANewNoteByClickingOnTheSign() {
+        new HomePage().pressPlusSignButton();
+        new AddANotePage().enterNoteTitle("New note").and().enterNoteContent("Note content").then().pressSaveButton();
+    }
+
     @Then("newly created note should be displayed on the page")
     public void newlyCreatedNoteShouldBeDisplayedOnThePage() {
         assertTrue(new DisplayNotesPage().noteTitleIsDisplayed("New note"));
