@@ -47,4 +47,8 @@ public class CreatingNote {
         new AddANotePage().refreshBrowser();
     }
 
+    @Then("{int} previously added notes should be displayed")
+    public void previouslyAddedNotesShouldBeDisplayed(int numberOfNotes) {
+        assertEquals(new DisplayNotesPage().numberOfNotesDisplayedOnThePage(), numberOfNotes);
+    }
 }
