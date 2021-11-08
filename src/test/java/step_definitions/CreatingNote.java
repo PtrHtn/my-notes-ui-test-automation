@@ -1,5 +1,6 @@
 package step_definitions;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -7,6 +8,7 @@ import pages.AddANotePage;
 import pages.DisplayNotesPage;
 import pages.HomePage;
 
+import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 public class CreatingNote {
@@ -34,4 +36,10 @@ public class CreatingNote {
         assertTrue(new DisplayNotesPage().noteContentIsDisplayed("Note content"));
     }
 
+    @When("he create {int} notes")
+    public void heCreateNotes(int numberOfNotes) {
+        new HomePage().pressPlusSignButton();
+        new AddANotePage().addNumberOfRandomNotes(numberOfNotes);
+    }
+    
 }
