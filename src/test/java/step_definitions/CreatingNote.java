@@ -41,5 +41,10 @@ public class CreatingNote {
         new HomePage().pressPlusSignButton();
         new AddANotePage().addNumberOfRandomNotes(numberOfNotes);
     }
-    
+
+    @And("re-open the web app")
+    public void reOpenTheWebApp() {
+        new AddANotePage().refreshBrowser();
+    }
+
 }
