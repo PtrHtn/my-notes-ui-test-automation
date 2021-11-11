@@ -80,5 +80,9 @@ public class BasePage {
         driverWait.until(ExpectedConditions.visibilityOfElementLocated(noteCardLocator));
         return driver.findElements(noteCardLocator).size();
     }
-    
+
+    public void clear(By locator) {
+        waitForVisibilityOf(locator);
+        driver.findElement(locator).clear();
+    }
 }
