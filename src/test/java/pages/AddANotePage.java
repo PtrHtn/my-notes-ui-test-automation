@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class AddANotePage extends BasePage{
 
@@ -33,5 +34,11 @@ public class AddANotePage extends BasePage{
             enterNoteContent(randomNoteContent());
             pressSaveButton();
         }
+    }
+
+    public void changeNoteTitle(String newNoteTitle) {
+        clear(noteTitleFieldLocator);
+        sendKeysTo(noteTitleFieldLocator, newNoteTitle);
+        click(buttonSaveLocator);
     }
 }
