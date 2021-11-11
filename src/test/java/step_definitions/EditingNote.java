@@ -1,7 +1,9 @@
 package step_definitions;
 
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.When;
 import pages.AddANotePage;
+import pages.EditNotePage;
 import pages.HomePage;
 
 public class EditingNote {
@@ -9,5 +11,10 @@ public class EditingNote {
     public void johnCreatesANewNoteWithTheTitleAndTheContent(String title, String content) {
         new HomePage().pressAddANoteButton();
         new AddANotePage().enterNoteTitle(title).and().enterNoteContent(content).then().pressSaveButton();
+    }
+
+    @When("he opens editing note mode by clicking edit button")
+    public void heOpensEditingNoteModeByClickingEditButton() {
+        new EditNotePage().pressEditButton();
     }
 }
