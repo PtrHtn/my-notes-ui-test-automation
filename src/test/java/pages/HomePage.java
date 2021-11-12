@@ -7,8 +7,9 @@ public class HomePage extends BasePage{
     private final By buttonAddNoteLocator = By.linkText("Add a note");
     private final By buttonPlusSignLocator = By.cssSelector("a[title='Add Note']");
 
-    public void navigateTo(String url){
+    public HomePage navigateTo(String url){
         goTo(url);
+        return this;
     }
 
     public AddANotePage pressAddANoteButton() {
