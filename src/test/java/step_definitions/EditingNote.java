@@ -25,7 +25,7 @@ public class EditingNote {
 
     @And("changes title of the note to {string}")
     public void changesTitleOfTheNoteTo(String newTitle) {
-        new AddANotePage().changeNoteTitle(newTitle);
+        new AddANotePage().changeNoteTitleTo(newTitle);
     }
 
 }
