@@ -36,9 +36,15 @@ public class AddANotePage extends BasePage{
         }
     }
 
-    public void changeNoteTitle(String newNoteTitle) {
+    public void changeNoteTitleTo(String newNoteTitle) {
         clear(noteTitleFieldLocator);
         sendKeysTo(noteTitleFieldLocator, newNoteTitle);
+        click(buttonSaveLocator);
+    }
+
+    public void changeNoteContentTo(String newNoteContent) {
+        clear(noteContentFieldLocator);
+        sendKeysTo(noteContentFieldLocator, newNoteContent);
         click(buttonSaveLocator);
     }
 }
