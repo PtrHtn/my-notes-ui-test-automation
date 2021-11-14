@@ -28,4 +28,9 @@ public class EditingNote {
         new AddANotePage().changeNoteTitleTo(newTitle);
     }
 
+    @And("changes content of the note to {string}")
+    public void changesContentOfTheNoteTo(String newContent) {
+        new AddANotePage().changeNoteContentTo(newContent);
+    }
+
 }
