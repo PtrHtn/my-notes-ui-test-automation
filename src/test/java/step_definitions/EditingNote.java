@@ -33,4 +33,10 @@ public class EditingNote {
         new AddANotePage().changeNoteContentTo(newContent);
     }
 
+    @Then("displayed note should be with title {string} and content {string}")
+    public void displayedNoteShouldBeWithTitleAndContent(String title, String content) {
+        assertTrue(new DisplayNotesPage().noteTitleIsDisplayed(title));
+        assertTrue(new DisplayNotesPage().noteContentIsDisplayed(content));
+    }
+
 }
