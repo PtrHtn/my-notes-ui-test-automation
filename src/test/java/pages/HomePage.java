@@ -26,4 +26,8 @@ public class HomePage extends BasePage{
         return new AddANotePage();
     }
 
+    public void pressXSignButton() {
+        click(buttonDeleteLocator);
+    }
+
 }
