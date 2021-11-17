@@ -19,4 +19,10 @@ public class DisplayNotesPage extends BasePage{
     public int numberOfNotesDisplayedOnThePage(){
         return getNumberOfNotes(noteCardLocator);
     }
+
+    public boolean noNoteIsDisplayed() {
+        return waitForInvisibilityOf(noteCardLocator);
+//        driverWait.until(ExpectedConditions.invisibilityOfAllElements(driver.findElements(noteCardLocator)));
+//        driverWait.until(ExpectedConditions.visibilityOfElementLocated(buttonAddNoteLocator));
+    }
 }
