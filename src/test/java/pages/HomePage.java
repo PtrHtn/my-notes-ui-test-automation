@@ -30,4 +30,7 @@ public class HomePage extends BasePage{
         click(buttonDeleteLocator);
     }
 
+    public boolean addANoteButtonIsDisplayed() {
+        return isDisplayed(buttonAddNoteLocator);
+    }
 }
