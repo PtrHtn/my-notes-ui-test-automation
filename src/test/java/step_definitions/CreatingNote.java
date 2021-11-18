@@ -15,7 +15,7 @@ public class CreatingNote {
 
     @Given("John is on the homepage of My Notes site")
     public void johnIsOnTheHomepageOfMyNotesSite() {
-        new HomePage().navigateTo("https://my-notes.now.sh/");
+        new HomePage().navigateTo(Properties.PROJECT_URL);
     }
 
     @When("he chooses to create a new note by clicking on the Add a note button")

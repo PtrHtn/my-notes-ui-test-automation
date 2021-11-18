@@ -14,7 +14,7 @@ import static org.testng.Assert.assertTrue;
 public class EditingNote {
     @Given("John creates a new note with the title {string} and the content {string}")
     public void johnCreatesANewNoteWithTheTitleAndTheContent(String title, String content) {
-        new HomePage().navigateTo("https://my-notes.now.sh/").and().pressAddANoteButton();
+        new HomePage().navigateTo(Properties.PROJECT_URL).and().pressAddANoteButton();
         new AddANotePage().enterNoteTitle(title).and().enterNoteContent(content).then().pressSaveButton();
     }
 

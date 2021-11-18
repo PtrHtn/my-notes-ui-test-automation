@@ -12,7 +12,7 @@ import static org.testng.Assert.assertTrue;
 public class DeletingNote {
     @Given("John got an existing note that he does not need any more")
     public void johnGotAnExistingNoteThatHeDoesNotNeedAnyMore() {
-        new HomePage().navigateTo("https://my-notes.now.sh/").and().pressAddANoteButton();
+        new HomePage().navigateTo(Properties.PROJECT_URL).and().pressAddANoteButton();
         new AddANotePage().enterNoteTitle("New note").and().enterNoteContent("Note content").then().pressSaveButton();
     }
 
