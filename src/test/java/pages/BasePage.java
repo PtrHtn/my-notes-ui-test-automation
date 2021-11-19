@@ -1,10 +1,8 @@
 package pages;
 
 import org.apache.commons.lang3.RandomStringUtils;
-import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import step_definitions.CucumberHooks;
@@ -19,6 +17,10 @@ public class BasePage {
         }catch (Exception exception) {
             System.out.println("Something went wrong in waitForVisibilityOf method: " + exception);
         }
+    }
+
+    protected boolean waitForInvisibilityOf(By locator) {
+        return driverWait.until(ExpectedConditions.invisibilityOfElementLocated(locator));
     }
 
     protected void goTo(String url){
