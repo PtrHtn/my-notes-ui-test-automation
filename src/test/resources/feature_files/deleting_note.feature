@@ -3,7 +3,7 @@ Feature: Deleting an existing note
 
   Rule: User can delete an existing note
 
-    @SmokeTest
+    @smoke
     Scenario: User can delete an existing note
       Given John got an existing note that he does not need any more
       When he deletes this note
