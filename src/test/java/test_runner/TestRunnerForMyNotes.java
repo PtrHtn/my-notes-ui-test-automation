@@ -15,8 +15,9 @@ import io.cucumber.testng.CucumberOptions;
         glue = {"classpath:step_definitions"},
         monochrome = false,
         dryRun = false,
-        tags = "@editing_note"
+        tags = "@smoke"
 //        tags = "@myNotes and @creating_note"
+//        tags = "@myNotes and not @creating_note"
 //        tags = "@myNotes or @creating_note"
 //        tags = "not @smoke"
 
@@ -30,6 +31,6 @@ import io.cucumber.testng.CucumberOptions;
 
 )
 
-public class MyNotesRunnerTest extends AbstractTestNGCucumberTests {
+public class TestRunnerForMyNotes extends AbstractTestNGCucumberTests {
 }
 

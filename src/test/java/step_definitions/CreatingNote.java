@@ -1,5 +1,6 @@
 package step_definitions;
 
+import constants.Project;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -15,7 +16,7 @@ public class CreatingNote {
 
     @Given("John is on the homepage of My Notes site")
     public void johnIsOnTheHomepageOfMyNotesSite() {
-        new HomePage().navigateTo(Properties.PROJECT_URL);
+        new HomePage().navigateTo(Project.BASE_URL);
     }
 
     @When("he chooses to create a new note by clicking on the Add a note button")
