@@ -7,9 +7,11 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import step_definitions.CucumberHooks;
 
+import java.time.Duration;
+
 public class BasePage {
     private final WebDriver driver = CucumberHooks.driver;
-    private final WebDriverWait driverWait = CucumberHooks.driverWait;
+    private final WebDriverWait driverWait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
     private void waitForVisibilityOf(By locator) {
         try {
