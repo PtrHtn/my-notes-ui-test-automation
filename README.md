@@ -14,8 +14,9 @@
 - [Chrome browser](https://www.google.com/chrome/), _tested with versions 95_
 - [Firefox browser](https://www.mozilla.org/en-US/firefox/new/), _tested with versions 94_
 
-### To run automation in Chrome Browser from terminal, enter:
-> `mvn clean test -Dbrowser=chrome`
-### To run automation in Firefox Browser from terminal, enter:
-> `mvn clean test -Dbrowser=firefox`
+### To run automation in Chrome Browser, enter:
+- `mvn clean test -Dbrowser=chrome` from the root directory
+### To run automation in Firefox Browser, enter:
+- `mvn clean test -Dbrowser=firefox` from the root directory
+
 
